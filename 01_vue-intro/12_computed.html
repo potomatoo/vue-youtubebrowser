@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VueJS</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Poor people</h1>
+    {{ bankruptPeople }}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+
+      data: {
+        accounts: [
+          { name: 'neo', balance: 500, isBankrupt: true },
+          { name: 'tak', balance: 700, isBankrupt: false },
+          { name: 'john', balance: 350, isBankrupt: false },
+          { name: 'justin', balance: 200, isBankrupt: true },
+        ],
+      },
+
+      methods: {},
+      
+      /*
+        어떤 함수들을 computed 에 정의하나요?
+        Data 를 Create Update Delete 하지 않고, 
+        Read(return) 하는 함수들! (SQL WHERE)
+      */ 
+      computed: {
+        // 함수지만, 이름은 명사형으로 짓는다.
+        numOfAccounts: function() {
+          return accounts.length
+        },
+
+        bankruptPeople: function() {
+          // filter 는 새로운 배열을 리턴한다.
+          const newArr = this.accounts.filter((account) => {
+            return account.isBankrupt
+          })
+          // filter 가 리턴한 배열을 리턴
+          return newArr
+        },
+        
+      }
+    })
+    
+  </script>
+</body>
+</html>

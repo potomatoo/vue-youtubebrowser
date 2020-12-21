@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "C:\\Program Files\\Python35\\python.exe",
+    "[typescript]": { 
+        "editor.defaultFormatter": "esbenp.prettier-vscode", 
+        "editor.formatOnSave": true 
+    }, 
+    "[vue]": { 
+        "editor.defaultFormatter": "esbenp.prettier-vscode", 
+        "editor.formatOnSave": true 
+    },
+    "editor.tokenColorCustomizations": null,
+}
